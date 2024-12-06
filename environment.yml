@@ -2,7 +2,7 @@
 #  - Using an environment.yml file with conda
 #  - Key Terminal Commands:
 #
-#    conda env create -f environment.yml
+#    conda env create -f environment.yml (Done)
 #    conda env update --file environment.yml --prune
 #    conda env export --name tracking-barbell-exercises > environment.yml
 #    conda env remove --name tracking-barbell-exercises
