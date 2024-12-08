@@ -12,11 +12,25 @@ single_file_gyr = pd.read_csv("../../data/raw/MetaMotion/MetaMotion/A-bench-heav
 # List all data in data/raw/MetaMotion
 # --------------------------------------------------------------
 
+files = glob("../../data/raw/MetaMotion/MetaMotion/*.csv")
+len(files)
 
 # --------------------------------------------------------------
 # Extract features from filename
 # --------------------------------------------------------------
 
+data_path ="../../data/raw/MetaMotion/MetaMotion/"
+f = files[0]
+
+participant = f.split("-")[0].replace(data_path,"")
+label = f.split("-")[1]
+category = f.split("-")[2].rstrip("123")
+
+df = pd.read_csv(f)
+
+df["participant"] = participant
+df["label"] = label
+df["category"] = category
 
 # --------------------------------------------------------------
 # Read all files
