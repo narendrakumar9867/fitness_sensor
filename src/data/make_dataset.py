@@ -148,7 +148,7 @@ data_merged.columns = [
     "acc_z",
     "gyr_x",
     "gyr_y",
-    "gyr_z"
+    "gyr_z",
     "label",
     "category",
     "participant",
@@ -162,7 +162,30 @@ data_merged.columns = [
 # Accelerometer:    12.500HZ
 # Gyroscope:        25.000Hz
 
+sampling = {
+    "acc_x": "mean",
+    "acc_y": "mean",
+    "acc_z": "mean",
+    "gyr_x": "mean",
+    "gyr_y": "mean",
+    "gyr_z": "mean",
+    "label": "last",
+    "category": "last",
+    "participant": "last",
+    "set": "last",
+}
 
+data_merged[:1000].resample(rule="200ns").apply(sampling)
+
+# Split by day
+days = [g for n, g in data_merged.groupby(pd.Grouper(freq="D"))]
+data_resampled = pd.concat([df.resample(rule="200ns").apply(sampling).dropna() for df in days])
+
+data_resampled["set"] = data_resampled["set"].astype("int")
+
+data_resampled.info()
+
+data_resampled.to_pickle("../../data/interim/")
 # --------------------------------------------------------------
 # Export dataset
 # --------------------------------------------------------------
