@@ -139,6 +139,21 @@ acc_df, gyr_df = read_data_from_files(files)
 # Merging datasets
 # --------------------------------------------------------------
 
+data_merged = pd.concat([acc_df.iloc[:,:3], gyr_df], axis=1)
+
+#rename columns
+data_merged.columns = [
+    "acc_x",
+    "acc_y",
+    "acc_z",
+    "gyr_x",
+    "gyr_y",
+    "gyr_z"
+    "label",
+    "category",
+    "participant",
+    "set",
+]
 
 # --------------------------------------------------------------
 # Resample data (frequency conversion)
