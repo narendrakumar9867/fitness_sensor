@@ -160,7 +160,7 @@ data_merged.columns = [
 # --------------------------------------------------------------
 
 # Accelerometer:    12.500HZ
-# Gyroscope:        25.000Hz
+# Gyroscope:         25.000Hz
 
 sampling = {
     "acc_x": "mean",
