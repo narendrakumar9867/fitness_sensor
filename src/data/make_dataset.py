@@ -156,7 +156,7 @@ data_merged.columns = [
 ]
 
 # --------------------------------------------------------------
-# Resample data  (frequency conversion)
+# Resample  data  (frequency conversion)
 # --------------------------------------------------------------
 
 # Accelerometer:     12.500HZ
