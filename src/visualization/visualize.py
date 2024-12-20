@@ -39,6 +39,9 @@ for label in df["label"].unique():
 # Adjust plot settings
 # --------------------------------------------------------------
 
+mpl.style.use("seaborn-v0_8-deep")
+mpl.rcParams["figure.figsize"] = (20, 5)
+mpl.rcParams["figure.dpi"] = 100
 
 # --------------------------------------------------------------
 # Compare medium vs. heavy sets
