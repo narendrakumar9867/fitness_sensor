@@ -40,7 +40,7 @@ for label in df["label"].unique():
 # --------------------------------------------------------------
 
 mpl.style.use("seaborn-v0_8-deep")
-mpl.rcParams["figure.figsize"] = (20, 5)
+mpl.rcParams["figure.figsize"] = (20 , 5)
 mpl.rcParams["figure.dpi"] = 100
 
 # --------------------------------------------------------------
