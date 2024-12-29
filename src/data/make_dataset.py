@@ -190,3 +190,4 @@ data_resampled.to_pickle("../../data/interim/")
 # Export dataset
 # --------------------------------------------------------------
 
+df = pd.read_pickle
