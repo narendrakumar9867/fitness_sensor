@@ -59,11 +59,27 @@ plt.legend()
 # Compare participants
 # --------------------------------------------------------------
 
+participant_df = df.query("label == 'bench'").sort_values("participant").reset_index()
+
+fig, ax = plt.subplots()
+participant_df.groupby(["participant"])["acc_y"].plot()
+ax.set_ylabel("acc_y")
+ax.set_xlabel("samples")
+plt.legend()
 
 # --------------------------------------------------------------
 # Plot multiple axis
 # --------------------------------------------------------------
 
+label = "squat"
+participant = "A"
+all_axis_df = df.query(f"label == '{label}").query(f"participant == '{participant}'").reset_index()
+
+fig, ax = plt.subplots()
+all_axis_df[["acc_x", "acc_y", "acc_z"]].plot(ax=ax)
+ax.set_ylabel("acc_y")
+ax.set_xlabel("samples")
+plt.legend()
 
 # --------------------------------------------------------------
 # Create a loop to plot all combinations per sensor
