@@ -97,7 +97,7 @@ for label in labels:
         }
         
         if len(all_axis_df) > 0:
-            
+            # this is all_axis_df 
             fig, ax = plt.subplots()
             all_axis_df[["acc_x", "acc_y", "acc_z"]].plot(ax=ax)
             ax.set_ylabel("acc_y")
