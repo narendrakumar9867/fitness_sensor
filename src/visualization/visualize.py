@@ -102,7 +102,7 @@ for label in labels:
             all_axis_df[["acc_x", "acc_y", "acc_z"]].plot(ax=ax)
             ax.set_ylabel("acc_y")
             ax.set_xlabel("samples")
-            plt.title(f"{label} ({participant})".title())
+            plt.title(f"{label} ({ participant })".title())
             plt.legend()
             
 for label in labels:
@@ -119,7 +119,7 @@ for label in labels:
             all_axis_df[["gyr_x", "gyr_y", "gyr_z"]].plot(ax=ax)
             ax.set_ylabel("gyr_y")
             ax.set_xlabel("samples")
-            plt.title(f"{label} ({participant})".title())
+            plt.title(f"{label} ({ participant })".title())
             plt.legend()
 
 # --------------------------------------------------------------
