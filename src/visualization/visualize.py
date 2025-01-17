@@ -108,8 +108,8 @@ for label in labels:
 for label in labels:
     for participant in participants:
         all_axis_df = {
-            df.query(f"label == '{label}'")
-            .query(f"participant == '{participant}'")
+            df.query(f"label == '{ label }'")
+            .query(f"participant == '{ participant }'")
             .reset_index()
         }
         
